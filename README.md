@@ -1,3 +1,6 @@
+Author: sirajuddin97
+This is repository translate to Russian
+
 # Fort Carson Roleplay gamemode
 I have created this script with a couple other SA:MP developers, such as Aviv, Jackmar, Fresh. Aviv put me in charge of letting people have access to this gamemode, so here is the official release. I don't take credits of the includes or the functions used. The credits to those goes to the respective authors and contributors.
 
