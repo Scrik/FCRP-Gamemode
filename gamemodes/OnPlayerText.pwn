@@ -13,7 +13,7 @@ public OnPlayerText(playerid, text[])
 	AFKCount[playerid] = 0;
 	if(AdminSpectate[playerid])
 	{
-		SendClientMessage(playerid, -1, ""COL_RED"You shouldn't use chat while spectating as an admin!");
+		SendClientMessage(playerid, -1, ""COL_RED"Вы не можете использовать чат, пока наблюдаете как админ.");
 		return 0;
 	}
 	if(AdminDuty[playerid] && pInfo[playerid][AdminLevel] >= 2)
