@@ -7,7 +7,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	if(dialogid == DIALOG_ARMOURY && response)
 	{
 		if(GetBagItemCount(playerid) >= 200)
-		    return CPF(playerid, COLOR_RED, "No more room in your Inventory. (200 slots)");
+		    return CPF(playerid, COLOR_RED, "Ваш инвентарь переполнен. (макс. 200 ячеек)");
 
 	    switch(listitem)
 	    {
@@ -131,8 +131,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				        _RemoveBagItem(playerid, Bag[playerid][bagItemID][i]);
 				    }
 				}
-				if(count >= 1) CPF(playerid, -1, "** Returned all equipment.");
-				else CPF(playerid, -1, "** You don't have any equipment to return.");
+				if(count >= 1) CPF(playerid, -1, "** Восстановлено всё снаряжение.");
+				else CPF(playerid, -1, "** У вас нет какого-либо снаряжения,чтобы восстановить.");
 			}
 	    }
 	}
@@ -140,17 +140,17 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	{
 	    switch(listitem)
 	    {
-	        case 0: _AddBagItem(playerid, 100, 10), CPF(playerid, -1, "** Added 12x76 Slugs (10)");
-	        case 1: _AddBagItem(playerid, 101, 14), CPF(playerid, -1, "** Added 9x18mm Clips (14)");
-	        case 2: _AddBagItem(playerid, 102, 50), CPF(playerid, -1, "** Added 5.56x45mm Clips (50)");
-	        case 3: _AddBagItem(playerid, 103, 5), CPF(playerid, -1, "** Added 7.62x54mm Clips (5)");
+	        case 0: _AddBagItem(playerid, 100, 10), CPF(playerid, -1, "** Добавлено 12x76 Slugs (10)");
+	        case 1: _AddBagItem(playerid, 101, 14), CPF(playerid, -1, "** Добавлено 9x18mm Clips (14)");
+	        case 2: _AddBagItem(playerid, 102, 50), CPF(playerid, -1, "** Добавлено 5.56x45mm Clips (50)");
+	        case 3: _AddBagItem(playerid, 103, 5), CPF(playerid, -1, "** Добавлено 7.62x54mm Clips (5)");
 	    }
 	}
 	if(dialogid == DIALOG_BAGPICK && response)
 	{
 	    if(listitem == 0) return _PickItem(playerid);
 		if(GetBagItemCount(playerid) >= 200)
-		    return CPF(playerid, COLOR_RED, "No more room in your Inventory. (200 slots)");
+		    return CPF(playerid, COLOR_RED, "Ваш инвентарь переполнен. (макс. 200 ячеек)");
 
 		new id = pList[playerid][listitem];
 	    for(new i = 0,j = MAX_ITEMS; i < j; i ++)
@@ -169,7 +169,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		        break;
 	        }
 	    }
-	    CPF(playerid, COLOR_GRAY, "SERVER: "COL_WHITE"Picked up %s (Amount: %d)", GetItemName(DropItem[id][dItem]), DropItem[id][dAmount]);
+	    CPF(playerid, COLOR_GRAY, "SERVER: "COL_WHITE"Подобрал %s (Количество: %d)", GetItemName(DropItem[id][dItem]), DropItem[id][dAmount]);
    	 	DropItem[id][dItem] = 0;
    	 	DropItem[id][dLoaded] = 0;
    	 	DropItem[id][dLoadAmount] = 0;
