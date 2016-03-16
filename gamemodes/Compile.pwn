@@ -400,7 +400,7 @@ stock GetPlayersInAnyVehicle(vehicleid)
     return count;
 }
 
-new Clothes[][ClothDet] =
+/*new Clothes[][ClothDet] =
 {
 	// 1. Object ID
 	// 2. Object Index
@@ -445,9 +445,9 @@ new Clothes[][ClothDet] =
     {18933, 4, 2, "Yellow & Dots Cadet Hat", 350, 2},
     {18935, 4, 2, "Sponge Cadet Hat", 350, 2},
     {19093, 4, 2, "White Baseball Cap", 450, 2},
-    {19160, 4, 2, "Yellow Baseball Cap", 450, 2},
+    {19160, 4, 2, "Yellow Baseball Cap", 450, 2}
 };
-
+*/
 enum FurnDet
 {
 	Object,
